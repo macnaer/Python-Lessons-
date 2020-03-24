@@ -1,4 +1,4 @@
-
+import random
 # exit = True
 # while exit:
 #     a = int(input("0. Exit "))
@@ -21,3 +21,15 @@
 #     for j in range(1, 10):
 #         print(i * j, end="\t")
 #     print("\n")
+
+days = 0
+counter = 0
+
+while days <= 7:
+    #a = int(input("Temp = "))
+    a = random.randrange(-50, 50)
+    print("random number => ", a)
+    if a > 10:
+        counter += 1
+    days += 1
+print(counter)
