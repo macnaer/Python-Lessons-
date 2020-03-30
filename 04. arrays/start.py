@@ -69,36 +69,44 @@ person.reverse()
 #     print("userDB => ", item)
 
 
-arr = []
+# arr = []
 
 
-def fill_arr(arr):
-    i = 0
-    while i < 7:
-        arr.append(random.randint(-12, 50))
-        i += 1
+# def fill_arr(arr):
+#     i = 0
+#     while i < 7:
+#         arr.append(random.randint(-12, 50))
+#         i += 1
 
 
-def show_arr(arr):
-    for item in arr:
-        print(item)
+# def show_arr(arr):
+#     for item in arr:
+#         print(item)
 
 
-def find_plus_minus(arr):
-    plus_numbers = 0
-    minus_numbers = 0
+# def find_plus_minus(arr):
+#     plus_numbers = 0
+#     minus_numbers = 0
 
-    for item in arr:
-        if item > 0:
-            plus_numbers += 1
-        elif item < 0:
-            minus_numbers += 1
-    print("plus_numbers = ", plus_numbers)
-    print("minus_numbers = ", minus_numbers)
+#     for item in arr:
+#         if item > 0:
+#             plus_numbers += 1
+#         elif item < 0:
+#             minus_numbers += 1
+#     print("plus_numbers = ", plus_numbers)
+#     print("minus_numbers = ", minus_numbers)
 
 
-fill_arr(arr)
-show_arr(arr)
-find_plus_minus(arr)
+# fill_arr(arr)
+# show_arr(arr)
+# find_plus_minus(arr)
 
 # print(arr)
+
+
+a = 9
+
+if a % 2 == 0:
+    print("true")
+else:
+    print("False")
