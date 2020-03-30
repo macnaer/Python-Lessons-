@@ -1,12 +1,16 @@
 import mysql.connector
 if __name__ == "__main__":
-    connect_to_db,
     add_capital
 
 
 def connect_to_db():
     db = mysql.connector.connect(
-        host="localhost", user="root", passwd="", database="countries")
+        host="localhost", user="root", passwd="")
+    cursor = db.cursor()
+    cursor.execute("CREATE DATABASE IF NOT EXISTS CityBuilder;")
+    cursor.execute("USE CityBuilder;")
+    cursor.execute(
+        "CREATE TABLE IF NOT EXISTS capitals (id INT AUTO_INCREMENT PRIMARY KEY, country VARCHAR(255), capital VARCHAR(255), population INT(10), mayor VARCHAR(255))")
 
     return db
 

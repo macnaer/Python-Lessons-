@@ -2,7 +2,7 @@ from lib.db import add_capital
 
 
 def menu():
-    choice = int(input("1: Add capital"))
+    choice = int(input("1: Add capital: "))
     if choice == 1:
         country = input("Country: ")
         capital = input("Capital: ")
