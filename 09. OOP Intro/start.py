@@ -35,6 +35,7 @@ class Account:
         self.number = number
         self.amount = amount
         self.currancy = currancy
+        add_card(number, name, surname, amount, currancy)
 
     def show_account_info(self):
         print("Number => ",  self.number, "\nName => ", self.name, "\nSurname => ", self.surname,  "\nAmount => ",
@@ -49,13 +50,21 @@ class Account:
         self.amount -= amount
 
 
-card1 = Account(random.randint(1000000000000000,
-                               9999999999999999), "Bill", "Gates", 1000, "UAH")
+def menu():
+    choice = int(input("1. Create card "))
+    if choice == 1:
+        name = input("Client name: ")
+        surname = input("Client surname: ")
+        amount = float(input("Amout: "))
+        currency = input("Currancy: ")
+        card = Account(random.randint(1000000000000000,
+                                      9999999999999999), name, surname, amount, currency)
 
 
-card1.show_account_info()
-add_card(card1.name, card1.surname, card1.amount, card1.currancy)
-# card1.set_money(30)
+menu()
+
+
+# card1.set_money(30)s
 # card1.show_account_info()
 # card1.get_money(240)
 # card1.show_account_info()

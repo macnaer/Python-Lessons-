@@ -11,16 +11,16 @@ def connect_to_db():
     cursor.execute("CREATE DATABASE IF NOT EXISTS CardManager;")
     cursor.execute("USE CardManager;")
     cursor.execute(
-        "CREATE TABLE IF NOT EXISTS CreditCard (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), surname VARCHAR(255), amount INT(10), currancy VARCHAR(255))")
+        "CREATE TABLE IF NOT EXISTS CreditCard (id INT AUTO_INCREMENT PRIMARY KEY, cardnumber INT(16) ,name VARCHAR(255), surname VARCHAR(255), amount INT(10), currancy VARCHAR(255))")
 
     return db
 
 
-def add_card(name, surname, amount, currancy):
+def add_card(cardnumber, name, surname, amount, currancy):
     db = connect_to_db()
     cursor = db.cursor()
-    sql = "INSERT INTO CreditCard (name, surname, amount, currancy ) VALUES (%s,%s,%s,%s)"
-    val = (name, surname, amount, currancy)
+    sql = "INSERT INTO CreditCard (cardnumber,name, surname, amount, currancy ) VALUES (%s,%s,%s,%s,%s)"
+    val = (cardnumber, name, surname, amount, currancy)
     cursor.execute(sql, val)
     db.commit()
     print(cursor.rowcount, "CARD added")
